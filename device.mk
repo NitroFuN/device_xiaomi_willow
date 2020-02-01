@@ -466,3 +466,10 @@ PRODUCT_COPY_FILES += \
 # Offline charging
 PRODUCT_PACKAGES += \
     charger_res_images
+
+# WiFi Display
+PRODUCT_PACKAGES += \
+    libnl
+
+PRODUCT_BOOT_JARS += \
+    WfdCommon
