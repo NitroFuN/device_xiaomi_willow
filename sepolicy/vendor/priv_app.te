@@ -1,2 +1,4 @@
 allow priv_app cgroup:file { read };
 allow priv_app default_android_hwservice:hwservice_manager { find };
+allow priv_app mnt_vendor_file:dir { search };
+allow priv_app firmware_file:filesystem { getattr };
