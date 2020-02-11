@@ -147,3 +147,25 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.early_app_phase_offset_ns=500000 \
     debug.sf.early_gl_phase_offset_ns=3000000 \
     debug.sf.early_gl_app_phase_offset_ns=15000000
+
+# Camera
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.lineageos.snap,com.qualcomm.qti.qmmi \
+    persist.vendor.camera.preview.ubwc=0 \
+    persist.vendor.camera.isp.clock.optmz=0 \
+    persist.vendor.camera.isp.turbo=1 \
+    persist.vendor.camera.imglib.usefdlite=1 \
+    persist.vendor.camera.expose.aux=1 \
+    persist.vendor.camera.HAL3.enabled=1 \
+    persist.vendor.camera.mpo.disabled=1 \
+    persist.vendor.camera.manufacturer=Xiaomi \
+    persist.vendor.camera.model=Redmi Note 8T \
+    persist.vendor.camera.stats.test=0 \
+    persist.vendor.camera.awb.sync=2 \
+    persist.vendor.camera.af.sync=2
+
+# Bluetooth SOC type
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.bluetooth.soc=cherokee \
+    persist.vendor.btstack.enable.splita2dp=true \
+    persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aptxadaptive-aac-ldac
