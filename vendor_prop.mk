@@ -171,3 +171,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.stats.test=0 \
     persist.vendor.camera.awb.sync=2 \
     persist.vendor.camera.af.sync=2
+
+# WCG properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.surface_flinger.has_wide_color_display=true \
+    ro.surface_flinger.has_HDR_display=true \
+    ro.surface_flinger.use_color_management=true \
+    ro.surface_flinger.wcg_composition_dataspace=143261696
