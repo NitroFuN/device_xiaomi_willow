@@ -31,9 +31,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac-aptxadaptive \
+    persist.vendor.btstack.enable.splita2dp=true \
+    persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aptxadaptive-aac-ldac \
     persist.vendor.bt.aac_frm_ctl.enabled=true \
-    vendor.qcom.bluetooth.soc=cherokee
+    persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aptxadaptive-aac-ldac
+
+# Bluetooth SOC type
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.qcom.bluetooth.soc=cherokee \
+    vendor.bluetooth.soc=cherokee
 
 # CNE and DPM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -163,9 +169,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.stats.test=0 \
     persist.vendor.camera.awb.sync=2 \
     persist.vendor.camera.af.sync=2
-
-# Bluetooth SOC type
-PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.bluetooth.soc=cherokee \
-    persist.vendor.btstack.enable.splita2dp=true \
-    persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aptxadaptive-aac-ldac
