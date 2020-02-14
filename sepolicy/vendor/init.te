@@ -2,3 +2,4 @@ allow init firmware_file:filesystem { getattr };
 allow init bt_firmware_file:filesystem { getattr };
 allow init hal_fingerprint_default:process { ptrace };
 allow init hwservicemanager:binder { transfer };
+allow init vendor_file:file { execute_no_trans };
