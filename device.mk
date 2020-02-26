@@ -14,7 +14,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/xiaomi/willow/willow-vendor.mk)
-$(call inherit-product, vendor/google/customization/config.mk)
 
 # Vendor properties
 -include $(LOCAL_PATH)/vendor_prop.mk
