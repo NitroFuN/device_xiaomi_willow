@@ -59,5 +59,5 @@ void vendor_load_properties()
 {
     // fingerprint
     property_override("ro.build.description", "willow-user 9 PKQ1.190616.001 V10.3.3.0.PCOINXM release-keys");
-    property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "xiaomi/willow/willow:9/PKQ1.190616.001/V10.3.3.0.PCOINXM:user/release-keys");
+    property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "google/coral/coral:10/QQ1D.200205.002/6084393:user/release-keys");
 }
