@@ -31,9 +31,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac-aptxadaptive \
+    vendor.qcom.bluetooth.soc=cherokee \
     persist.vendor.bt.aac_frm_ctl.enabled=true \
-    vendor.qcom.bluetooth.soc=cherokee
+    persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac-aptxadaptive
+
+# FM2 and its JNI
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.bluetooth.soc=cherokee \
+    persist.vendor.btstack.enable.splita2dp=true \
+    persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aptxadaptive-aac-ldac
 
 # CNE and DPM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -49,24 +55,35 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.demo.hdmirotationlock=false \
+    persist.sys.sf.color_saturation=1.0 \
+    debug.mdpcomp.logs=0 \
     debug.egl.hw=0 \
     debug.sf.hw=0 \
     debug.sf.recomputecrop=0 \
-    debug.sf.latch_unsignaled=0 \
+    debug.sf.latch_unsignaled=1 \
     ro.opengles.version=196610 \
     ro.vendor.display.sensortype=2 \
     ro.vendor.display.cabl=0 \
     vendor.display.comp_mask=0 \
-    vendor.display.dataspace_saturation_matrix=1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0 \
     vendor.display.disable_decimation=1 \
     vendor.display.disable_excl_rect=0 \
     vendor.display.disable_excl_rect_partial_fb=1 \
     vendor.display.disable_hw_recovery_dump=1 \
     vendor.display.disable_inline_rotator=1 \
     vendor.display.disable_scaler=0 \
-    vendor.display.enable_default_color_mode=0 \
+    vendor.display.enable_default_color_mode=1 \
     vendor.display.enable_null_display=0 \
+    vendor.display.enable_optimize_refresh=1 \
+    vendor.display.disable_ui_3d_tonemap=1 \
     vendor.gralloc.disable_ubwc=0
+
+# This matrix should be in column major order, per SurfaceFlinger requirement
+#  1.0   0.0   0.0
+#  0.0   1.0   0.0
+#  0.0   0.0   1.0
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.display.dataspace_saturation_matrix=1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0
 
 # Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -133,8 +150,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.default_network=22,22 \
     telephony.lteOnCdmaDevice=1
 
+# SurfaceFlinger
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.early_phase_offset_ns=500000 \
     debug.sf.early_app_phase_offset_ns=500000 \
     debug.sf.early_gl_phase_offset_ns=3000000 \
     debug.sf.early_gl_app_phase_offset_ns=15000000
+
+# WCG properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.surface_flinger.has_wide_color_display=true \
+    ro.surface_flinger.has_HDR_display=true \
+    ro.surface_flinger.use_color_management=true \
+    ro.surface_flinger.wcg_composition_dataspace=143261696

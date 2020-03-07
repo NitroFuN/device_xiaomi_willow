@@ -6,7 +6,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter ginkgo willow,$(TARGET_DEVICE)),)
+ifeq ($(TARGET_DEVICE),willow)
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)
