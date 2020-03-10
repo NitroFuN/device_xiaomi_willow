@@ -23,6 +23,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="willow" \
     TARGET_DEVICE="willow"
 
-BUILD_FINGERPRINT := "xiaomi/willow/willow:9/PKQ1.190616.001/V10.3.3.0.PCOINXM:user/release-keys"
+BUILD_FINGERPRINT := "google/coral/coral:10/QQ2A.200305.003/6156912:user/release-keys"
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
