@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/syberia_willow.mk
+    $(LOCAL_DIR)/aosp_willow.mk
 
 COMMON_LUNCH_CHOICES := \
-    syberia_willow-user \
-    syberia_willow-userdebug \
-    syberia_willow-eng
+    aosp_willow-user \
+    aosp_willow-userdebug \
+    aosp_willow-eng
